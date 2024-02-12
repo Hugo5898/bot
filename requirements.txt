@@ -1,3 +1,2 @@
 flask
 py-cord
-os
