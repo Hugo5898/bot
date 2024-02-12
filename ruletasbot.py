@@ -1,7 +1,5 @@
-intents = discord.Intents.default()
-intents.typing = False
-intents.presences = False
-import discord;from discord.ext import commands;from random import randint;bot = commands.Bot(intents=intents)
+from keep_alive import keep_alive;import os; import discord;from discord.ext import commands;from random import randint;bot = commands.Bot(intents=intents)
+keep_alive()
 @bot.slash_command()
 async def ruleta(ctx):
     if ctx.author.guild_permissions.administrator:
@@ -14,5 +12,4 @@ async def ruleta(ctx):
         if rp==5: await ctx.respond("El ganador de la ruleta a sido: ||  Christian. ||, ganando "+str(rng)+" cuadros.||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||https://cdn.discordapp.com/attachments/787623650890874910/1204879169947963412/wheel.gif?ex=65d6562b&is=65c3e12b&hm=64e6b422fe7133930fc0b9b0c79e666fe85f0474a48545314093fe98c7bc680f&");print("5.Christian")
     else:
         await ctx.respond('Necesitas permisos de administrador para ejecutar ese comando.')
-bot.run("MTIwNDQzNjM3ODA1NDgxOTkyMQ.GInnGq.yurWqPjnjRBbeLmniHYJnM7Xqi71fBrI26NwVE")
-
+bot.run(os.environ.get("token"))
