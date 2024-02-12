@@ -1,4 +1,4 @@
-from keep_alive import keep_alive;import os; import discord;from discord.ext import commands;from random import randint;bot = commands.Bot(intents=intents)
+from keep_alive import keep_alive;import os; import discord;from discord.ext import commands;from random import randint;bot = commands.Bot()
 keep_alive()
 @bot.slash_command()
 async def ruleta(ctx):
